@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { FN_Context } from "../../context/FullNameContext";
-import NavLinkByRahib from "../NavLinkByRahib";
+
 import "./header.css";
 import { DarkModeContext } from "../../context/DarkModeContext";
+import NavLinkByRahib from "../NaviLinkByRahib";
 
 function Header() {
     const { ad } = useContext(FN_Context)
