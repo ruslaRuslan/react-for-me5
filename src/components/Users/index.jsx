@@ -4,6 +4,7 @@ import "./index.css"
 import PageContainer from "../PageContainer"
 import { Link } from "react-router-dom"
 
+
 const url = `https://jsonplaceholder.typicode.com/users`
 const Users = () => {
     const [users, setUsers] = useState([])
