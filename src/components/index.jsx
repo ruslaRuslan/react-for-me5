@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import "./index.css"
 
 const url = 'https://jsonplaceholder.typicode.com/users'
-let componentYrandimi = false
+
 function Counter() {
     const [users, setUsers] = useState([]) //hook use*
     const [isDark, setIsDark] = useState(false) //hook use*
@@ -13,20 +13,39 @@ function Counter() {
         console.log('men geldim5');
     }, [users])
 
+    useEffect(() => {
+        console.log('ozunnen muqayet ol');
+    }, [isDark])
 
-    
-    if (componentYrandimi === false) {
+    useEffect(() => {
         axios.get(url).then(({ data }) => {
             setUsers(data)
-            componentYrandimi = true
+
             let fromStronge = localStorage.getItem('isDark')
             setIsDark(fromStronge === "true" ? true : false)
         })
-    }
-    return (
-        <>
+    }, [])
 
-        </>
+
+    return (
+        <div className={isDark ? "darkContainer" : null}
+        >
+            <button onClick={() => {
+                let newIsDark = !isDark
+                setIsDark(newIsDark)
+                localStorage.setItem('isDark', newIsDark)
+            }}
+            >{isDark ? "🌑" : "☀"}</button>
+            {
+
+                users.map((user) => {
+                    return
+                })
+
+            }
+
+
+        </div>
     )
 }
 
