@@ -6,8 +6,8 @@ const Circle = () => {
             <button>toggle</button>
             <div style={{
                 border: '1px solid',
-                with:50,
-                height:50,
+                with: 50,
+                height: 50,
             }}>
 
             </div>
